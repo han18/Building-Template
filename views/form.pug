@@ -1,0 +1,29 @@
+<!-- LOGIN PAGE -->
+head
+  meta(charset='utf-8')
+  title Submission Form
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+  link(rel="stylesheet", href="style.css")
+
+  body(class='class-body')
+    .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            h4#myModalLabel.modal-title
+              | Login to GoldHan Jewelry
+          // Modal Body
+          .modal-body
+            form(role='form' method='GET' action='https://www.goldhanjewelry.com/')
+              div.form-group
+                label(for='name') Name:
+                input#name.form-control(type='text', placeholder='name' name='name')
+              div.form-group
+                label(for='email') Email:
+                input#email.form-control(type='email', placeholder='name@email.com' name='email')
+              button.btn.btn-primary(type="submit", name="name") Submit
+              button.btn.btn-default(type="button")
+                | Cancel
+          // Modal Footer
+          .modal-footer
+            h4 Form
