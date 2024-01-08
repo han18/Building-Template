@@ -1,13 +1,14 @@
 console.log("Building an Express Application, Assignment / Using Pug Template");
 const express = require("express");
 const morgan = require("morgan");
+// const pug = require("pug");
 // const fs = require("fs");
 
 // Setting PORT
 const app = express();
 const PORT = 3005;
 
-// Static files to import the style file
+// Static files to import the style file and asset file
 app.use(express.static("./style"));
 app.use(express.static("./assets"));
 
@@ -28,10 +29,13 @@ app.get("/images", (req, res) => {
   res.render("images");
 });
 
-// Creating a download image route view
+// Creating a download image route view rendering the page
 app.get("/download", (req, res) => {
   res.render("download");
-  res.download("download");
+});
+
+app.get("/download-image", (req, res) => {
+  res.download("./assets/gold.jpg");
 });
 
 //catching all routes to redirect the user wrong endpoint
