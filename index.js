@@ -9,6 +9,7 @@ const PORT = 3005;
 
 // Static files to import the style file
 app.use(express.static("./style"));
+app.use(express.static("./assets"));
 
 // Middleware
 app.use(morgan("dev"));
@@ -25,6 +26,12 @@ app.get("/", (req, res) => {
 // Creating a SECOND route template of images from /image.pug file
 app.get("/images", (req, res) => {
   res.render("images");
+});
+
+// Creating a download image route view
+app.get("/download", (req, res) => {
+  res.render("download");
+  res.download("download");
 });
 
 //catching all routes to redirect the user wrong endpoint
